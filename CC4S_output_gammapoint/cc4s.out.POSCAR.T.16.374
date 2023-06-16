@@ -1,0 +1,139 @@
+
+                __ __      
+     __________/ // / _____
+    / ___/ ___/ // /_/ ___/
+   / /__/ /__/__  __(__  ) 
+   \___/\___/  /_/ /____/  
+  Coupled Cluster for Solids
+
+version: heads/develop-0-g942261d, date: Fri Dec 3 21:04:52 2021 +0100
+build date: Dec  3 2021 21:06:00
+compiler: icc (ICC) 19.1.0.166 20191121
+total processes: 192
+calculation started on: Tue Dec 14 01:25:22 2021
+
+
+execution plan read, steps: 15
+
+step: 1, TensorReader
+Reading from text file EigenEnergies.dat
+realtime 0.166781414 s
+--
+step: 2, TensorReader
+Reading from binary file CoulombVertex.dat
+realtime 3.303657686 s
+--
+step: 3, TensorReader
+Reading from binary file CoulombVertexSingularVectors.dat
+realtime 0.327786882 s
+--
+step: 4, TensorReader
+Reading from text file GridVectors.dat
+realtime 0.050306783 s
+--
+step: 5, TensorReader
+Reading from text file CoulombPotential.dat
+realtime 0.005847827 s
+--
+step: 6, DefineHolesAndParticles
+number of holes     No: 34
+number of particles Nv: 340
+number of states    Np: 374
+realtime 0.001176272 s
+--
+step: 7, SliceOperator
+Slicing CoulombVertex.dat into holes and particles.
+realtime 0.002908017 s
+--
+step: 8, VertexCoulombIntegrals
+number of field variables NF: 1878
+realtime 0.001652256 s
+--
+step: 9, CoupledCluster
+Using method Ccsd. integralsSliceSize: 34
+Using mixer DiisMixer. maxResidua: 32
+Maximum number of iterations: 30
+Unless reaching energy convergence dE: 1e-05
+and amplitudes convergence dR: 1e-05
+Iter         Energy         dE           dR         time   GF/s/core
+   1  -5.34650181e+01  -5.3465e+01   8.8449e-01      5.5    9.4
+   2  -5.30613598e+01   4.0366e-01   1.9863e-01    149.9    4.4
+   3  -5.51594176e+01  -2.0981e+00   4.9005e-02    147.3    4.4
+   4  -5.53095656e+01  -1.5015e-01   2.6434e-02    147.3    4.4
+   5  -5.53036478e+01   5.9178e-03   1.5663e-02    147.1    4.4
+   6  -5.53238823e+01  -2.0235e-02   1.2721e-02    148.5    4.4
+   7  -5.53378852e+01  -1.4003e-02   8.6056e-03    148.9    4.4
+   8  -5.53355928e+01   2.2924e-03   4.9273e-03    150.5    4.3
+   9  -5.53488007e+01  -1.3208e-02   2.9865e-03    149.9    4.4
+  10  -5.53504348e+01  -1.6341e-03   1.6148e-03    151.0    4.3
+  11  -5.53485478e+01   1.8870e-03   9.7267e-04    151.9    4.3
+  12  -5.53492679e+01  -7.2012e-04   5.4353e-04    151.5    4.3
+  13  -5.53504478e+01  -1.1799e-03   3.3566e-04    152.1    4.3
+  14  -5.53496652e+01   7.8262e-04   2.2558e-04    151.7    4.3
+  15  -5.53496915e+01  -2.6336e-05   1.6764e-04    152.4    4.3
+  16  -5.53499380e+01  -2.4653e-04   1.3980e-04    154.1    4.2
+  17  -5.53499072e+01   3.0805e-05   1.2668e-04    153.0    4.3
+  18  -5.53498480e+01   5.9214e-05   1.2123e-04    152.7    4.3
+  19  -5.53499084e+01  -6.0428e-05   1.1873e-04    155.2    4.2
+  20  -5.53498962e+01   1.2229e-05   1.1778e-04    155.2    4.2
+  21  -5.53498922e+01   4.0532e-06   1.1762e-04    155.8    4.2
+  22  -5.53498918e+01   3.2095e-07   1.1762e-04    155.8    4.2
+  23  -5.53498883e+01   3.5087e-06   1.1737e-04    157.8    4.1
+  24  -5.53499009e+01  -1.2528e-05   1.1623e-04    157.3    4.1
+  25  -5.53498627e+01   3.8147e-05   1.1281e-04    157.2    4.2
+  26  -5.53498739e+01  -1.1226e-05   1.0812e-04    157.6    4.1
+  27  -5.53498649e+01   9.0164e-06   9.8666e-05    159.3    4.1
+  28  -5.53498035e+01   6.1440e-05   8.5296e-05    159.1    4.1
+  29  -5.53498110e+01  -7.5118e-06   7.6448e-05    158.3    4.1
+  30  -5.53497901e+01   2.0888e-05   6.2747e-05    161.4    4.0
+cc4s.in(51): WARNING: energy or amplitudes convergence not reached.
+
+CCSD correlation energy:          -55.3497900994
+2nd-order correlation energy:     -53.4650180626
+realtime 4455.634028424 s
+--
+step: 10, TransitionStructureFactorFiniteSizeCorrection
+Uncorrected correlation energy:   -55.3492495412
+Finite-size energy correction:    -4.6539952573
+realtime 6.522176796 s
+--
+step: 11, TensorReader
+Reading from text file DeltaHH.dat
+realtime 0.024260250 s
+--
+step: 12, TensorReader
+Reading from binary file DeltaPPHH.dat
+realtime 1.351257172 s
+--
+step: 13, TensorReader
+Reading from text file Mp2PairEnergies.dat
+realtime 0.012469881 s
+--
+step: 14, CcsdFocalPointBasisSetCorrection
+CCSD correlation energy:          -55.3497900994
+CCSD-FP correlation energy:       -59.8090483625
+2nd-order-CBS correlation energy: -60.8989613368
+==================================
+CCSD-BSIE energy correction:      -4.4592582631
+2nd-order energy correction :     -7.4339432741
+PS-PPL-BSIE energy correction:    2.9746850111
+realtime 1.999261453 s
+--
+step: 15, PerturbativeTriples
+Progress(%)  time(s)   GFLOP/s      
+10           191       0.001        
+20           385       0.000        
+30           582       0.000        
+40           777       0.000        
+50           972       0.000        
+60           1168      0.000        
+70           1365      0.000        
+80           1559      0.000        
+90           1751      0.000        
+100          1947      0.000        
+(T) correlation energy:      -4.522298912340895
+(T*) correlation energy: TODO
+realtime 2030.361517141 s
+--
+total realtime: 6500.016565257 s
+total operations: 3684239.104827492963523 GFLOPS, speed: 2.952107143881486 GFLOPS/s/core

@@ -1,0 +1,124 @@
+  Loading intel-mkl/2020.2 from: /opt/sw/vsc4/VSC/x86_64/glibc-2.17/skylake/intel/compilers_and_libraries_2020.2.254/linux/mkl
+  Loading intel-mpi/2019.8 from: /opt/sw/vsc4/VSC/x86_64/glibc-2.17/skylake/intel/compilers_and_libraries_2020.2.254/linux/mpi
+  Loading intel/19.1.2.254 from: /opt/sw/vsc4/VSC/x86_64/glibc-2.17/skylake/intel/compilers_and_libraries_2020.2.254/linux
+
+                __ __      
+     __________/ // / _____
+    / ___/ ___/ // /_/ ___/
+   / /__/ /__/__  __(__  ) 
+   \___/\___/  /_/ /____/  
+  Coupled Cluster for Solids
+
+version: heads/master-0-gbff205f, date: Mon Apr 4 13:37:51 2022 +0200
+build date: May  6 2022 15:42:52
+compiler: icc (ICC) 19.1.2.254 20200623
+total processes: 96
+calculation started on: Mon May 30 07:36:00 2022
+
+DRY RUN ONLY - nothing will be calculated
+Dry run finished. Estimates provided for 96 ranks.
+Memory estimate (per Rank/Total): 1.4917 / 143.203 GB
+Operations estimate (per Rank/Total): 269932 / 2.59134e+07 GFLOPS
+Time estimate with assumed performance of 10 GFLOPS/core/s: 26993.2 s (7.4981 h)
+--
+step: 1, Read
+Reading from text file EigenEnergies.elements
+realtime 0.060743749 s
+--
+step: 2, Read
+Reading from binary file CoulombVertex.elements
+realtime 5.057985223 s
+--
+step: 3, Read
+Reading from binary file CoulombVertexSingularVectors.elements
+realtime 0.182521640 s
+--
+step: 4, Read
+Reading from text file GridVectors.elements
+realtime 0.009787351 s
+--
+step: 5, Read
+Reading from text file CoulombPotential.elements
+realtime 0.004287101 s
+--
+step: 6, DefineHolesAndParticles
+number of holes     No: 30
+number of particles Nv: 300
+number of states    Np: 330
+realtime 0.000882790 s
+--
+step: 7, SliceOperator
+Slicing CoulombVertex.elements into holes and particles.
+realtime 0.510925947 s
+--
+step: 8, VertexCoulombIntegrals
+Using complex Coulomb integrals
+number of field variables NF: 3092
+realtime 1.490816211 s
+--
+step: 9, CoupledCluster
+Using method Ccsd. integralsSliceSize: 100
+Using mixer DiisMixer. maxResidua: 32
+Maximum number of iterations: 100
+Unless reaching energy convergence dE: 1e-05
+and amplitudes convergence dR: 1e-05
+Iter         Energy         dE           dR         time   GF/s/core
+   1  -4.52590164e+01  -4.5259e+01   8.1791e-01      5.8   18.1
+   2  -4.51484383e+01   1.1058e-01   1.6290e-01    156.0   17.5
+   3  -4.67022615e+01  -1.5538e+00   3.4470e-02    148.5   18.0
+   4  -4.67660523e+01  -6.3791e-02   1.7176e-02    147.8   18.1
+   5  -4.67557548e+01   1.0298e-02   7.5946e-03    147.6   18.1
+   6  -4.67656576e+01  -9.9028e-03   5.2444e-03    148.2   18.0
+   7  -4.67644855e+01   1.1720e-03   2.5185e-03    148.0   18.0
+   8  -4.67631920e+01   1.2935e-03   1.7148e-03    148.4   18.0
+   9  -4.67668613e+01  -3.6693e-03   1.1119e-03    149.0   17.9
+  10  -4.67665800e+01   2.8130e-04   7.9887e-04    148.9   17.9
+  11  -4.67653037e+01   1.2763e-03   5.2651e-04    148.8   17.9
+  12  -4.67664603e+01  -1.1565e-03   2.9451e-04    150.2   17.8
+  13  -4.67663253e+01   1.3495e-04   1.6485e-04    150.6   17.7
+  14  -4.67659514e+01   3.7398e-04   7.5824e-05    150.8   17.7
+  15  -4.67661055e+01  -1.5412e-04   3.8391e-05    151.1   17.7
+  16  -4.67661462e+01  -4.0767e-05   1.7850e-05    151.6   17.6
+  17  -4.67661079e+01   3.8367e-05   8.5464e-06    151.7   17.6
+  18  -4.67661123e+01  -4.4074e-06   4.0591e-06    152.5   17.5
+
+Ccsd correlation energy:          -46.7661122819
+2nd-order correlation energy:     -45.2590164088
+realtime 2556.110898720 s
+--
+step: 10, PerturbativeTriples
+Progress(%)  time(s)   GFLOP/s      
+1            11        9.473        
+10           94        9.649        
+20           105       9.654        
+30           106       9.623        
+40           106       9.615        
+50           106       9.609        
+60           105       9.607        
+70           105       9.610        
+80           105       9.619        
+90           105       9.625        
+100          105       9.628        
+(T) correlation energy:      -3.746237712382587
+realtime 1146.602600066 s
+--
+step: 11, FiniteSizeCorrection
+Finite-size energy correction:    -4.1540688705
+realtime 6.333994217 s
+--
+step: 12, Read
+Reading from binary file DeltaIntegralsHH.elements
+realtime 0.017694877 s
+--
+step: 13, Read
+Reading from binary file DeltaIntegralsPPHH.elements
+realtime 1.197932711 s
+--
+step: 14, Read
+Reading from text file Mp2PairEnergies.elements
+realtime 0.003173241 s
+--
+step: 15, BasisSetCorrection
+Ccsd-Bsie energy correction:      -3.8627619495
+realtime 3.770557949 s
+--
